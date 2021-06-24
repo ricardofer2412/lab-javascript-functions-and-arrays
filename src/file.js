@@ -1,4 +1,6 @@
 // Iteration #1: Find the maximum
+// Implement the function maxOfTwoNumbers that takes two numbers as arguments and returns the largest.
+
 function maxOfTwoNumbers(a, b) {
   if (a > b) {
     return a;
@@ -6,27 +8,21 @@ function maxOfTwoNumbers(a, b) {
   if (b > a) {
     return b;
   }
-  if (a == b) {
-    return a;
-  }
 }
 
-// Iteration #2: Find longest word
-const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
+const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot', 'crocodila', 'arocodila'];
 
+let longestWord = '0';
+let equalWords = [];
 function findLongestWord(words) {
-  if (words.length == 0) {
-    return null;
-  }
-  if (words.length == 1) {
-    return words[0];
-  }
-
+  //get longest word
   for (i = 0; i < words.length; i++) {
     if (longestWord.length < words[i].length) {
       longestWord = words[i];
     }
   }
+
+  //find other words with equal length
   for (i = 0; i < words.length; i++) {
     if (longestWord.length === words[i].length) {
       //push to array
@@ -42,24 +38,21 @@ function findLongestWord(words) {
   return equalWords[0];
 }
 
+findLongestWord(words);
+
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers(numbers) {
-  if (numbers.length === 0) {
-    return 0;
+function sum(numbers) {
+  let sum = 0;
+  for (i = 0; i < numbers.length; i++) {
+    sum = sum + numbers[i];
   }
-  if (numbers.length === 1) {
-    return numbers[0];
-  }
-  let arraySum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    arraySum = numbers[i] + arraySum;
-  }
-  return arraySum;
+  return sum;
 }
 
-sumNumbers(numbers);
+sum(numbers);
+
 // Iteration #3.1 Bonus:
 function sum() {}
 
@@ -142,8 +135,6 @@ const matrix = [
 
 function greatestProduct() {}
 
-// The following is required to make unit tests work.
-/* Environment setup. Do not modify the below code. */
 if (typeof module !== 'undefined') {
   module.exports = {
     maxOfTwoNumbers,
